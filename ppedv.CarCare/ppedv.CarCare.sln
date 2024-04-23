@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.CarCare.Data.EfCore",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.CarCare.Data.EfCore.Tests", "ppedv.CarCare.Data.EfCore.Tests\ppedv.CarCare.Data.EfCore.Tests.csproj", "{D6E2366A-5456-4FFA-BF67-235205D906F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.CarCare.Logic.Core", "ppedv.CarCare.Logic.Core\ppedv.CarCare.Logic.Core.csproj", "{AD66C815-FC9E-4712-B182-CB3697114ABF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D6E2366A-5456-4FFA-BF67-235205D906F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6E2366A-5456-4FFA-BF67-235205D906F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6E2366A-5456-4FFA-BF67-235205D906F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD66C815-FC9E-4712-B182-CB3697114ABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD66C815-FC9E-4712-B182-CB3697114ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD66C815-FC9E-4712-B182-CB3697114ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD66C815-FC9E-4712-B182-CB3697114ABF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
