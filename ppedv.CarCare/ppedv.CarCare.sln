@@ -5,6 +5,10 @@ VisualStudioVersion = 17.10.34707.107
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.CarCare.Model", "ppedv.CarCare.Model\ppedv.CarCare.Model.csproj", "{41BC4D93-1A49-43C6-A748-8F82E890A7B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.CarCare.Data.EfCore", "ppedv.CarCare.Data.EfCore\ppedv.CarCare.Data.EfCore.csproj", "{3DEA4BA5-833B-4E34-87E1-7BB2C7520D32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.CarCare.Data.EfCore.Tests", "ppedv.CarCare.Data.EfCore.Tests\ppedv.CarCare.Data.EfCore.Tests.csproj", "{D6E2366A-5456-4FFA-BF67-235205D906F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{41BC4D93-1A49-43C6-A748-8F82E890A7B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41BC4D93-1A49-43C6-A748-8F82E890A7B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41BC4D93-1A49-43C6-A748-8F82E890A7B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DEA4BA5-833B-4E34-87E1-7BB2C7520D32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DEA4BA5-833B-4E34-87E1-7BB2C7520D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DEA4BA5-833B-4E34-87E1-7BB2C7520D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DEA4BA5-833B-4E34-87E1-7BB2C7520D32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E2366A-5456-4FFA-BF67-235205D906F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E2366A-5456-4FFA-BF67-235205D906F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E2366A-5456-4FFA-BF67-235205D906F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E2366A-5456-4FFA-BF67-235205D906F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
