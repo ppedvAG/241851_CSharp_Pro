@@ -1,6 +1,4 @@
-﻿
-
-string text=null;
+﻿string text=null;
 
 if(!string.IsNullOrEmpty(text))
 {

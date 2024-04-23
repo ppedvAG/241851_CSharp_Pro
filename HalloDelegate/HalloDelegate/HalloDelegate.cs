@@ -1,7 +1,4 @@
-﻿
-
-
-namespace HalloDelegate
+﻿namespace HalloDelegate
 {
     delegate void EinfacherDelegate();
     delegate void DelegateMitPara(string txt);
