@@ -15,7 +15,7 @@ https://joshclose.github.io/CsvHelper/getting-started/
 https://github.com/closedxml/closedxml  
 https://learn.microsoft.com/de-de/dotnet/communitytoolkit/mvvm/  
 		  
-https://learn.microsoft.com/en-us/dotnet /standard/parallel-programming/dataflow-task-parallel-library  
+https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/dataflow-task-parallel-library  
 https://github.com/icsharpcode/ILSpy  
 https://github.com/microsoft/TemplateStudio  
 https://learn.microsoft.com/de-de/dotnet/communitytoolkit/mvvm/  
