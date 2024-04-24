@@ -28,8 +28,8 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Model}" Header="Model"/>
                     <DataGridTextColumn Binding="{Binding Color}" Header="Farbe"/>
-                    <DataGridComboBoxColumn ItemsSource="{Binding Manufacturers, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" 
-                                            DisplayMemberPath="Name" Header="Manufacturer"/>
+                    <!--<DataGridComboBoxColumn ItemsSource="{Binding Manufacturers, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" 
+                                            DisplayMemberPath="Name" Header="Manufacturer"/>-->
                 </DataGrid.Columns>
             </DataGrid>
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>

@@ -7,6 +7,6 @@
         public DateTime BuiltDate { get; set; }
         public string? Color { get; set; }
         
-        public required Manufacturer Manufacturer { get; set; }
+        public virtual required Manufacturer Manufacturer { get; set; }
     }
 }

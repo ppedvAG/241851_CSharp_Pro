@@ -34,7 +34,12 @@ namespace ppedv.CarCare.UI.WPF.ViewModels
                 Cars.Clear();
                 //var query = repo.Query<Car>().OrderBy(x => x.Color).Take(10);
                 //query.ToList().ForEach(c => Cars.Add(c));
-                foreach (var c in repo.GetCarsWithManufacturers().ToList())
+                //foreach (var c in repo.GetCarsWithManufacturers().ToList())
+                //{
+                //    Cars.Add(c);
+                //}
+
+                foreach (var c in repo.GetAll<Car>().ToList())
                 {
                     Cars.Add(c);
                 }
