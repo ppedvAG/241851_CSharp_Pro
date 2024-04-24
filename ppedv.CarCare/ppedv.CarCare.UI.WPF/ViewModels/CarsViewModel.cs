@@ -1,38 +1,68 @@
-﻿using ppedv.CarCare.Model;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using ppedv.CarCare.Logic.Core;
+using ppedv.CarCare.Model;
 using ppedv.CarCare.Model.Contracts;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Input;
 
 namespace ppedv.CarCare.UI.WPF.ViewModels
 {
-    public class CarsViewModel : INotifyPropertyChanged
+    public partial class CarsViewModel : ObservableObject
     {
         private readonly IRepository repo;
-        private Car selectedCar;
-
-        public event PropertyChangedEventHandler? PropertyChanged;
 
         public SaveCommand SaveCommand { get; set; }
+        public ICommand NewCommand { get; set; }
+        public ICommand LoadCommand { get; set; }
+        public ICommand LoadBlueMondayCarsCommand { get; set; }
 
-        public CarsViewModel(IRepository repo)
+        public CarsViewModel(IRepository repo, GarageService gs)
         {
             this.repo = repo;
 
-            Cars = new List<Car>(repo.GetAll<Car>());
+            Cars = new ObservableCollection<Car>();
+            LoadCommand = new RelayCommand(() =>
+            {
+                Cars.Clear();
+                repo.GetAll<Car>().ToList().ForEach(c => Cars.Add(c));
+            });
+
             SaveCommand = new SaveCommand(repo);
+            NewCommand = new RelayCommand(AddNewCar);
+            LoadBlueMondayCarsCommand = new RelayCommand(() =>
+            {
+                Cars.Clear();
+                gs.GetAllBlueMondayCars().ToList().ForEach(c => Cars.Add(c));
+            });
+
+            LoadCommand.Execute(null);
+
         }
 
-        public List<Car> Cars { get; set; }
-        public Car SelectedCar
+        private void AddNewCar()
         {
-            get => selectedCar;
-            set
+            var newCar = new Car()
             {
-                selectedCar = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedCar)));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(KW)));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PS)));
-            }
+                Manufacturer = new Manufacturer() { Name = "M1" },
+                Model = "Neu",
+                KW = 100,
+                Color = "weiss",
+                BuiltDate = DateTime.Now
+            };
+            repo.Add(newCar);
+            Cars.Add(newCar);
+            SelectedCar = newCar;
         }
+
+        public ObservableCollection<Car> Cars { get; set; }
+
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(PS))]
+        [NotifyPropertyChangedFor(nameof(KW))]
+        private Car selectedCar;
+
 
         public string PS
         {
@@ -57,14 +87,9 @@ namespace ppedv.CarCare.UI.WPF.ViewModels
             {
                 if (SelectedCar != null)
                     SelectedCar.KW = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PS)));
-
+                OnPropertyChanged(nameof(PS));
             }
         }
-
-        //hack -> DI later
-        public CarsViewModel() : this(new Data.EfCore.CarCareContextRepositoryAdapter("Server=(localdb)\\mssqllocaldb;Database=CarCare_Test;Trusted_Connection=true;"))
-        { }
 
     }
 }
