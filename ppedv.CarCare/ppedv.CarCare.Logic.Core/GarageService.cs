@@ -9,6 +9,9 @@ namespace ppedv.CarCare.Logic.Core
 
         public GarageService(IRepository repository)
         {
+            //guard class
+            ArgumentNullException.ThrowIfNull(repository, nameof(repository));
+
             this.repository = repository;
         }
 

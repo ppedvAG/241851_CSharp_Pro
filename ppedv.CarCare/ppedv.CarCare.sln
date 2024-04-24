@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34707.107
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.CarCare.Model", "ppedv.CarCare.Model\ppedv.CarCare.Model.csproj", "{41BC4D93-1A49-43C6-A748-8F82E890A7B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.CarCare.Model", "ppedv.CarCare.Model\ppedv.CarCare.Model.csproj", "{41BC4D93-1A49-43C6-A748-8F82E890A7B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.CarCare.Data.EfCore", "ppedv.CarCare.Data.EfCore\ppedv.CarCare.Data.EfCore.csproj", "{3DEA4BA5-833B-4E34-87E1-7BB2C7520D32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.CarCare.Data.EfCore", "ppedv.CarCare.Data.EfCore\ppedv.CarCare.Data.EfCore.csproj", "{3DEA4BA5-833B-4E34-87E1-7BB2C7520D32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.CarCare.Data.EfCore.Tests", "ppedv.CarCare.Data.EfCore.Tests\ppedv.CarCare.Data.EfCore.Tests.csproj", "{D6E2366A-5456-4FFA-BF67-235205D906F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.CarCare.Data.EfCore.Tests", "ppedv.CarCare.Data.EfCore.Tests\ppedv.CarCare.Data.EfCore.Tests.csproj", "{D6E2366A-5456-4FFA-BF67-235205D906F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.CarCare.Logic.Core", "ppedv.CarCare.Logic.Core\ppedv.CarCare.Logic.Core.csproj", "{AD66C815-FC9E-4712-B182-CB3697114ABF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.CarCare.Logic.Core", "ppedv.CarCare.Logic.Core\ppedv.CarCare.Logic.Core.csproj", "{AD66C815-FC9E-4712-B182-CB3697114ABF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.CarCare.UI.DevConsole", "ppedv.CarCare.UI.DevConsole\ppedv.CarCare.UI.DevConsole.csproj", "{73EF754F-D4EB-462C-8EA7-741BBD6213B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{AD66C815-FC9E-4712-B182-CB3697114ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD66C815-FC9E-4712-B182-CB3697114ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD66C815-FC9E-4712-B182-CB3697114ABF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73EF754F-D4EB-462C-8EA7-741BBD6213B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73EF754F-D4EB-462C-8EA7-741BBD6213B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73EF754F-D4EB-462C-8EA7-741BBD6213B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73EF754F-D4EB-462C-8EA7-741BBD6213B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
