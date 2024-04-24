@@ -34,6 +34,11 @@ namespace ppedv.CarCare.Data.EfCore
             return context.Set<T>().Find(id);
         }
 
+        public IQueryable<T> Query<T>() where T : Entity
+        {
+            return context.Set<T>();
+        }
+
         public void SaveAll()
         {
             context.SaveChanges();

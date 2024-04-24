@@ -17,7 +17,7 @@ namespace ppedv.CarCare.Logic.Core
 
         public IEnumerable<Car> GetAllBlueMondayCars()
         {
-            return repository.GetAll<Car>().Where(x => x.Color == "blue" && x.BuiltDate.DayOfWeek == DayOfWeek.Monday);
+            return repository.Query<Car>().Where(x => x.Color == "blue" );
         }
     }
 }

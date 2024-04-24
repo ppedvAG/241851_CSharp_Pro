@@ -5,6 +5,7 @@ using ppedv.CarCare.Model;
 using ppedv.CarCare.Model.Contracts;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Windows.Input;
 
 namespace ppedv.CarCare.UI.WPF.ViewModels
@@ -14,7 +15,7 @@ namespace ppedv.CarCare.UI.WPF.ViewModels
         private readonly IRepository repo;
 
         public SaveCommand SaveCommand { get; set; }
-        public ICommand NewCommand { get; set; }
+        //public ICommand NewCommand { get; set; }
         public ICommand LoadCommand { get; set; }
         public ICommand LoadBlueMondayCarsCommand { get; set; }
 
@@ -26,11 +27,13 @@ namespace ppedv.CarCare.UI.WPF.ViewModels
             LoadCommand = new RelayCommand(() =>
             {
                 Cars.Clear();
-                repo.GetAll<Car>().ToList().ForEach(c => Cars.Add(c));
+                var query = repo.Query<Car>().OrderBy(x => x.Color).Take(10);
+
+                query.ToList().ForEach(c => Cars.Add(c));
             });
 
             SaveCommand = new SaveCommand(repo);
-            NewCommand = new RelayCommand(AddNewCar);
+            //NCommand = new RelayCommand(AddNewCar);
             LoadBlueMondayCarsCommand = new RelayCommand(() =>
             {
                 Cars.Clear();
@@ -41,7 +44,19 @@ namespace ppedv.CarCare.UI.WPF.ViewModels
 
         }
 
-        private void AddNewCar()
+        [RelayCommand]
+        private void ExportCSV()
+        {
+            var expCars = Cars.Select(x => new { Name = x.Model, Farbe = x.Color, Jahr = x.BuiltDate.Year });
+            using var sw = new StreamWriter("export.csv");
+            foreach (var c in expCars)
+            {
+                sw.WriteLine($"{c.Name};{c.Farbe};{c.Jahr};");
+            }
+        }
+
+        [RelayCommand]
+        private void Add()
         {
             var newCar = new Car()
             {

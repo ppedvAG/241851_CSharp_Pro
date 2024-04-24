@@ -12,7 +12,8 @@
             <Button Command="{Binding LoadCommand}">Laden</Button>
             <Button Command="{Binding LoadBlueMondayCarsCommand}" >Lade Blue Monday</Button>
             <Button Command="{Binding SaveCommand}">Speichern</Button>
-            <Button Command="{Binding NewCommand}">Neu</Button>
+            <Button Command="{Binding AddCommand}">Neu</Button>
+            <Button Command="{Binding ExportCSVCommand}">Export</Button>
             <Button>Löschen</Button>
         </WrapPanel>
         <Grid>
