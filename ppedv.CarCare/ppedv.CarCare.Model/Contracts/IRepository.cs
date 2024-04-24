@@ -10,6 +10,9 @@
         void Delete<T>(T entity) where T : Entity;
         void Update<T>(T entity) where T : Entity;
 
+        IQueryable<Car> GetCarsWithManufacturers();
+        
+
         void SaveAll();
     }
 }

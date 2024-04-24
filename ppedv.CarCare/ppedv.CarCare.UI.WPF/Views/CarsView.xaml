@@ -23,7 +23,15 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <DataGrid ItemsSource="{Binding Cars}"
-                      SelectedItem="{Binding SelectedCar}"/>
+                      SelectedItem="{Binding SelectedCar}"
+                      AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Model}" Header="Model"/>
+                    <DataGridTextColumn Binding="{Binding Color}" Header="Farbe"/>
+                    <DataGridComboBoxColumn ItemsSource="{Binding Manufacturers, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" 
+                                            DisplayMemberPath="Name" Header="Manufacturer"/>
+                </DataGrid.Columns>
+            </DataGrid>
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
             <Grid Grid.Column="2">
                 <Grid.ColumnDefinitions>
@@ -51,7 +59,10 @@
                 <Label Grid.Row="3">Color</Label>
                 <TextBox Text="{Binding SelectedCar.Color,UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Grid.Column="1"/>
                 <Label Grid.Row="4">Manufacturer</Label>
-                <ComboBox Text="{Binding SelectedCar.Manufacturer.Name}" Grid.Row="4" Grid.Column="1"/>
+                <ComboBox ItemsSource="{Binding Manufacturers}"
+                          SelectedItem="{Binding SelectedCar.Manufacturer}"
+                          DisplayMemberPath="Name"
+                          Grid.Row="4" Grid.Column="1"/>
             </Grid>
         </Grid>
     </DockPanel>

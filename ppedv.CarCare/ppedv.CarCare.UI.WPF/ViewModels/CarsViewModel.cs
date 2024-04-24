@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.Collections;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ppedv.CarCare.Logic.Core;
 using ppedv.CarCare.Model;
@@ -19,17 +20,24 @@ namespace ppedv.CarCare.UI.WPF.ViewModels
         public ICommand LoadCommand { get; set; }
         public ICommand LoadBlueMondayCarsCommand { get; set; }
 
+        public ObservableCollection<Manufacturer> Manufacturers { get; set; }
+
         public CarsViewModel(IRepository repo, GarageService gs)
         {
             this.repo = repo;
+
+            Manufacturers = new ObservableCollection<Manufacturer>(repo.GetAll<Manufacturer>());
 
             Cars = new ObservableCollection<Car>();
             LoadCommand = new RelayCommand(() =>
             {
                 Cars.Clear();
-                var query = repo.Query<Car>().OrderBy(x => x.Color).Take(10);
-
-                query.ToList().ForEach(c => Cars.Add(c));
+                //var query = repo.Query<Car>().OrderBy(x => x.Color).Take(10);
+                //query.ToList().ForEach(c => Cars.Add(c));
+                foreach (var c in repo.GetCarsWithManufacturers().ToList())
+                {
+                    Cars.Add(c);
+                }
             });
 
             SaveCommand = new SaveCommand(repo);

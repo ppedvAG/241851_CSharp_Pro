@@ -1,4 +1,5 @@
-﻿using ppedv.CarCare.Model;
+﻿using Microsoft.EntityFrameworkCore;
+using ppedv.CarCare.Model;
 using ppedv.CarCare.Model.Contracts;
 
 namespace ppedv.CarCare.Data.EfCore
@@ -32,6 +33,11 @@ namespace ppedv.CarCare.Data.EfCore
         public T? GetById<T>(int id) where T : Entity
         {
             return context.Set<T>().Find(id);
+        }
+
+        public IQueryable<Car> GetCarsWithManufacturers()
+        {
+            return context.Cars.Include(x => x.Manufacturer);
         }
 
         public IQueryable<T> Query<T>() where T : Entity
